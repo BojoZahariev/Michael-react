@@ -1,0 +1,9 @@
+.bin {
+  position: absolute;
+  top: 10px;
+  left: 200px;
+}
+
+#test {
+  color: red;
+}

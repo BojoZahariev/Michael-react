@@ -4,6 +4,7 @@
   left: 200px;
 }
 
-#test {
+.truck {
   color: red;
+  position: absolute;
 }

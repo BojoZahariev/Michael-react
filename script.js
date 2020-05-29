@@ -2,22 +2,13 @@ const Truck = props => {
   return <div className='truck'>Truck</div>;
 };
 
-class Bin extends React.Component {
+class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
   }
 
-  getOffset = () => {
-    console.log(this.myRef.current.offsetTop);
-    console.log(this.myRef.current.offsetLeft);
-  };
   render() {
-    return (
-      <div className='bin' ref={this.myRef} onClick={this.getOffset}>
-        click
-      </div>
-    );
+    return <div className='hero'>hero</div>;
   }
 }
 
@@ -33,8 +24,14 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <Truck />
-        <Bin />
+        <Hero />
+
+        <div className='rightSide'>
+          <Truck />
+          <Truck />
+          <Truck />
+          <Truck />
+        </div>
       </div>
     );
   }

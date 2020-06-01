@@ -6,55 +6,34 @@ const Truck = props => {
   );
 };
 
-class Hero extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      animation: false
-    };
+const Hero = props => {
+  if (props.match) {
+    return <div className='hero animatedMatch'>hero</div>;
+  } else if (props.match === false) {
+    return <div className='hero animatedNo'>hero</div>;
+  } else {
+    return <div className='hero'>hero</div>;
   }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.clicked !== prevProps.clicked) {
-      this.setState({
-        animation: true
-      });
-    }
-  }
-
-  render() {
-    return <div className={`hero ${this.state.animation && 'animated'}`}>hero</div>;
-  }
-}
+};
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
-      isHovered: false
+      match: ''
     };
-
-    this.setMode = this.setMode.bind(this);
-  }
-
-  setMode(m) {
-    this.setState({
-      clicked: true
-    });
   }
 
   render() {
     return (
       <div>
-        <Hero clicked={this.state.clicked} />
+        <Hero match={this.state.match} />
 
         <div className='rightSide'>
-          <Truck onClick={() => this.setState({ clicked: true })} />
-          <Truck />
-          <Truck />
-          <Truck />
+          <Truck onClick={() => this.setState({ match: true })} />
+          <Truck onClick={() => this.setState({ match: false })} />
+          <Truck onClick={() => this.setState({ match: false })} />
+          <Truck onClick={() => this.setState({ match: false })} />
         </div>
       </div>
     );
@@ -63,12 +42,3 @@ class Container extends React.Component {
 
 const domContainer = document.querySelector('#root');
 ReactDOM.render(<Container />, domContainer);
-
-/*
-var el = document.querySelector('#test');
-var viewportOffset = el.getBoundingClientRect();
-// these are relative to the viewport, i.e. the window
-var top = viewportOffset.top;
-var left = viewportOffset.left;
-console.log(top, left);
-*/

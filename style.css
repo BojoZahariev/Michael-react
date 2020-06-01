@@ -1,6 +1,6 @@
 .rightSide {
   position: absolute;
-  right: 0;
+  right: 50%;
 }
 
 .hero {
@@ -9,6 +9,10 @@
 .truck {
 }
 
-.animated {
+.animatedMatch {
   color: red;
+}
+
+.animatedNo {
+  color: blue;
 }

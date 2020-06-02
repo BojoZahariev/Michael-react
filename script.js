@@ -8,23 +8,11 @@ const Truck = props => {
 
 const Hero = props => {
   if (props.match) {
-    return (
-      <div className='hero animatedMatch'>
-        <img className='heroImg' alt='man' src={props.image} />
-      </div>
-    );
+    return <img className='hero animatedMatch' alt='man' src={props.image} />;
   } else if (props.match === false) {
-    return (
-      <div className='hero animatedNoMatch'>
-        <img className='heroImg' alt='man' src={props.image} />
-      </div>
-    );
+    return <img className='hero animatedNoMatch' alt='man' src={props.image} />;
   } else {
-    return (
-      <div className='hero'>
-        <img className='heroImg' alt='man' src={props.image} />
-      </div>
-    );
+    return <img className='hero' alt='man' src={props.image} />;
   }
 };
 

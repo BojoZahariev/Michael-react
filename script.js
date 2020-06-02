@@ -1,7 +1,7 @@
 const Truck = props => {
   return (
     <div className='truck' onClick={props.onClick}>
-      Truck
+      <img className='truckImg' alt='truck' src={props.image} />
     </div>
   );
 };
@@ -30,7 +30,7 @@ class Container extends React.Component {
         <Hero match={this.state.match} />
 
         <div className='rightSide'>
-          <Truck onClick={() => this.setState({ match: true })} />
+          <Truck onClick={() => this.setState({ match: true })} image={'./images/firetruck.png'} />
           <Truck onClick={() => this.setState({ match: false })} />
           <Truck onClick={() => this.setState({ match: false })} />
           <Truck onClick={() => this.setState({ match: false })} />

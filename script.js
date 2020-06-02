@@ -15,7 +15,7 @@ const Hero = props => {
     );
   } else if (props.match === false) {
     return (
-      <div className='hero animatedNo'>
+      <div className='hero animatedNoMatch'>
         <img className='heroImg' alt='man' src={props.image} />
       </div>
     );

@@ -1,6 +1,6 @@
 .rightSide {
   position: absolute;
-  right: 20%;
+  left: 70%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -8,16 +8,33 @@
 .hero {
   position: absolute;
   top: 50%;
+  left: 5%;
   transform: translateY(-50%);
 }
 
-.truck {
-}
-
 .animatedMatch {
-  color: red;
+  animation-name: match;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
 }
 
-.animatedNo {
+@keyframes match {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: 80%;
+  }
+}
+
+.animatedNoMatch {
   color: blue;
+}
+
+.truck {
+  width: 300px;
+}
+
+.truckImg {
+  width: 100%;
 }

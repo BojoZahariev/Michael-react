@@ -1,9 +1,14 @@
 .rightSide {
   position: absolute;
   right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hero {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .truck {

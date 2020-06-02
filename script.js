@@ -8,11 +8,23 @@ const Truck = props => {
 
 const Hero = props => {
   if (props.match) {
-    return <div className='hero animatedMatch'>hero</div>;
+    return (
+      <div className='hero animatedMatch'>
+        <img className='heroImg' alt='man' src={props.image} />
+      </div>
+    );
   } else if (props.match === false) {
-    return <div className='hero animatedNo'>hero</div>;
+    return (
+      <div className='hero animatedNo'>
+        <img className='heroImg' alt='man' src={props.image} />
+      </div>
+    );
   } else {
-    return <div className='hero'>hero</div>;
+    return (
+      <div className='hero'>
+        <img className='heroImg' alt='man' src={props.image} />
+      </div>
+    );
   }
 };
 
@@ -27,7 +39,7 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <Hero match={this.state.match} />
+        <Hero match={this.state.match} image={'./images/fireman.png'} />
 
         <div className='rightSide'>
           <Truck onClick={() => this.setState({ match: true })} image={'./images/firetruck.png'} />
